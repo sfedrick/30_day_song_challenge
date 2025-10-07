@@ -1,0 +1,29 @@
+--BPM 164 
+-- Key Dmajor
+-- notes d e fs g a b cs 
+-- set chord progression variable names for Dmajor
+do
+    setF "I" "[d,fs,a]"
+    setF "II" "[e,g,b]"
+    setF "III" "[fs,a,cs]"
+    setF "IV" "[g,b,d]"
+    setF "V" "[a,cs,e]"
+    setF "VI" "[b,d,fs]"
+    setF "VII" "[cs,e,g]"
+
+
+setcps (164/60/4)
+
+d1 $ s "[bd sd,clap ~ clap*2 lo, kick]" #room 2 #sz 0.7
+d2 $ s "[~ sn]!4"#room 1 #sz 0.4
+d3 $ note "d e*2 fs [a6 d6]" # s "arpy" #room 2 #sz 0.7 #gain 1.25
+d4 $ note "^I*2 ^VI*2 [^IV ^IV ^IV] ^V" # s "supersaw"#room 2 #sz 0.7 
+d5 $ note "<[^I ^I] [^VI ^VI] ^IV ^V>" # s "supersaw"#room 2 #sz 0.7 # octave 5
+d4 silence
+
+hush
+
+
+
+
+
