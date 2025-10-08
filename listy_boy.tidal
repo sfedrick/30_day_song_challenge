@@ -1,0 +1,37 @@
+
+ do
+    resetCycles
+    let mylist = [1,2,6,3,50,14,31,34,2,6]
+    --let mylist = [6,50, 100, 30]
+    let l = pure (length mylist)
+    let pat = segment 1 $ (mylist !!) <$> (mod (sig floor) (l))
+    d6 $  n "x" # note pat # s "arpy" # legato 1
+
+hush
+ do
+  resetCycles
+  let mylist = [10,100,50,30]
+  let pat = fastcat $ map pure mylist
+  d6 $  n "x!4" # note pat # s "superpiano"
+resetCycles
+let mylist = [10,100,50,30]
+let pat = fastcat $ map pure mylist
+n "x!4" # note pat # s "superpiano"  
+
+hush
+d1 $ n "x x x x" # note "b c"
+
+do
+ resetCycles
+ let mylist = [1,2,6,3,50,14,31,34,2,6]
+ let l = pure (length mylist)
+ let pat = segment 1 $ (mylist !!) <$> (mod (sig floor) (l))
+ d6 $ s "superpiano" # ( segment  $ range 0 32 $ sine)
+
+hush
+
+d1 $ n ( segment 8 $ range 10 24 $ sine) # sound "superpiano" # room 2 # sz 0.7 # gain 0.75
+d2 $ jux rev $ n ( segment  8 $ range 0 32 $ sine) # sound "superpiano" # room 2 # sz 0.7
+d3 $ jux rev $ n ( segment 4 $ range 0 10 $ sine) # sound "sax" # gain 0.3
+d4 $ n "<[0 1*6 3] [~ 3*2 4]  5>" # sound "sax" # octave 7 
+d5 $ n " 0 1 3 [4*2]" # sound "808"# room 2 # sz 0.7

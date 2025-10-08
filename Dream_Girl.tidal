@@ -2,22 +2,32 @@
 -- Key Dmajor
 -- notes d e fs g a b cs 
 -- set chord progression variable names for Dmajor
+{- I (Tonic): D Major (D - F# - A)
+ii (Supertonic): E minor (E - G - B)
+iii (Mediant): F# minor (F# - A - C#)
+IV (Subdominant): G Major (G - B - D)
+V (Dominant): A Major (A - C# - E)
+vi (Submediant): B minor (B - D - F#)
+vii° (Leading-Tone): C# diminished (C# - E - G) -}
 do
     setF "I" "[d,fs,a]"
     setF "II" "[e,g,b]"
     setF "III" "[fs,a,cs]"
     setF "IV" "[g,b,d]"
-    setF "V" "[a,cs,e]"
-    setF "VI" "[b,d,fs]"
-    setF "VII" "[cs,e,g]"
+    -- e6 acts very strange and just using 16 solves the issue
+    setF "V" "[a,cs,16]" 
+    setF "VI" "[b,d6,fs6]"
+    setF "VII" "[cs,16,g6]"
 
-do 
-    let drumBeat1 = "[bd sd,clap ~ clap*2 lo, kick]"
-    let drumBeat2 = "[hi sn]!4"
-    let melodyDream = "d e*2 fs [a6 d6]"
-    let chordProgression = "<[^I*2] [^VI*4 ^IV] [^IV*4 ^VI] [[^V*4 ~] ^I]>"
-    let endcycle = 36
-    setcps (164/60/4)
+--figure out why I can't place below in a do block
+let drumBeat1 = "[bd sd,clap ~ clap*2 lo, kick]"
+let drumBeat2 = "[hi sn]!4"
+let melodyDream = "d e*2 fs [a6 d6]"
+let chordProgression = "<[^I] [^VI*2] [^IV] [^V]*2>"
+let endcycle = 36
+setcps (164/60/4)
+
+    
 
 
  (do{
@@ -25,7 +35,7 @@ do
     d1 $ qtrigger $ seqP [
         (4, endcycle, s drumBeat1 #room 2 #sz 0.7),                   
         (6, endcycle, sound drumBeat2 #room 2 #sz 0.7),
-        (15, endcycle, s "kick kick"# crush 4 #room 5 #sz 0.7 # vowel "<[a] [o] [i]>")
+        (14, endcycle, s "kick kick"# crush 4 #room 5 #sz 0.7 # vowel "<[a] [o] [i]>")
                         ];          
     -- Melody
     d2 $ qtrigger $ seqP[
@@ -34,13 +44,7 @@ do
     -- Chord progression
     d3 $ qtrigger $ seqP[
         (0, 10, note chordProgression # s "supersaw" #room 2 #sz 0.7 # octave 3),
-        (10, 14, fadeOut 4 $ note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 3),
-        (14, endcycle,note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 5 #gain 0.75)
-    ] #gain 1.25})
-
-hush
-
-
-
-
+        (10, 14, fadeOut 2 $ note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 3),
+        (12, endcycle,note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 4 )
+    ] #gain 0.75})
 
