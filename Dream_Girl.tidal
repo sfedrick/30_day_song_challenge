@@ -27,7 +27,9 @@ let chordProgression = "<[^I] [^VI*2] [^IV] [^V]*2>"
 let endcycle = 36
 setcps (164/60/4)
 
-    
+hush
+d1 $ note "[^V]"# s"superpiano"
+
 
 
  (do{
