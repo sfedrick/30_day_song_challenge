@@ -1,0 +1,5 @@
+
+
+d1 $ n (scale "minor" "[0 1] [4 5] [4 3]  [7]"|+"a") #sound "arpy" # octave 2 # room 2 # sz 0.5 # gain 0.75
+
+d2  $jux rev $ n (scale "minor" "[0 1] [4 5] [4 3]  [7]"|+"a") #sound "arpy" # octave 3 # room 2 # sz 0.5 # gain 0.75
