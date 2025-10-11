@@ -1,3 +1,5 @@
+setcps (0.6)
+
 do
     let mylist = [1,2,6,3,50,14,31,34,2,6]
     let l = pure (length mylist)
@@ -31,5 +33,12 @@ do
     let l = pure (length mylist)
     let pat = segment 8 $ (mylist !!) <$> (mod (sig floor) (l))
     d5 $ fast 8 $ s "jungle" # scale "minor" pat|-20 |+"g" #octave 5 # room 1 # sz 0.7
+
 hush
+
+
+
+
+
+
 
