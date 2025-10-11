@@ -9,15 +9,16 @@ IV (Subdominant): G Major (G - B - D)
 V (Dominant): A Major (A - C# - E)
 vi (Submediant): B minor (B - D - F#)
 vii° (Leading-Tone): C# diminished (C# - E - G) -}
+-- tidal path /home/shaun/.cabal/store/ghc-9.4.7/tidal-1.10.1-4acb9cda4e3272e067951dbf2c8c8e6f2e6aab2c34818d4d97f16e0ad87ca43a/share/BootTidal.hs
+-- change bootidal.hs to have setN = (streamSet tidal) :: String -> Pattern Note -> IO ()
 do
-    setF "I" "[d,fs,a]"
-    setF "II" "[e,g,b]"
-    setF "III" "[fs,a,cs]"
-    setF "IV" "[g,b,d]"
-    -- e6 acts very strange and just using 16 solves the issue
-    setF "V" "[a,cs,16]" 
-    setF "VI" "[b,d6,fs6]"
-    setF "VII" "[cs,16,g6]"
+    setN "I" "[d,fs,a]"
+    setN "II" "[e,g,b]"
+    setN "III" "[fs,a,cs]"
+    setN "IV" "[g,b,d]"
+    setN "V" "[a,cs,e6]" 
+    setN "VI" "[b,d6,fs6]"
+    setN "VII" "[cs,e6,g6]"
 
 --figure out why I can't place below in a do block
 let drumBeat1 = "[bd sd,clap ~ clap*2 lo, kick]"
@@ -27,11 +28,7 @@ let chordProgression = "<[^I] [^VI*2] [^IV] [^V]*2>"
 let endcycle = 36
 setcps (164/60/4)
 
-hush
-d1 $ note "[^V]"# s"superpiano"
-
-
-
+-- demo
  (do{
     -- Drums 
     d1 $ qtrigger $ seqP [

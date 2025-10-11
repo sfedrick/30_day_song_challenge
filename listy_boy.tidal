@@ -54,7 +54,7 @@ let endcycle = 36;
         # room ( segment 8 $ range 0 0.5 $ sine) # sz ( segment 8 $ range 0 0.5 $ sine))];
     -- Saxes 
      d2  $ qtrigger $ seqP [
-        (4,endcycle,n "<[0 1*4] [0 7 1] 5>" # sound "sax" 
+        (4,endcycle,n "<[0 1*4] [~ 7 1] 5>" # sound "sax" 
         # room ( segment 8 $ range 0 0.5 $ sine)  # sz 0.9 # octave 4),
         (7,endcycle,n "<[0 1*4] [0 7 1] 5>" # sound "sax" 
         # room ( segment 8 $ range 0 0.5 $ sine)  # sz 0.9 # octave 7)

@@ -1,0 +1,35 @@
+do
+    let mylist = [1,2,6,3,50,14,31,34,2,6]
+    let l = pure (length mylist)
+    let pat = segment 8 $ (mylist !!) <$> (mod (sig floor) (l))
+    d1 $ qtrigger $ fast 8 $ s "jungbass" # n pat  # room 2 # sz 0.7
+
+do
+    let mylist = [1,2,5,3,1,10,12,4,1,2]
+    let mylist = [6,2,5,3,1,6,2,4,1,6]
+    let mylist = [6,2,5,3,1,2,5,6,1,6]
+    let mylist = [1,2,1,1,1,1,1,1,2,1]
+    let l = pure (length mylist)
+    let pat = segment 4 $ (mylist !!) <$> (mod (sig floor) (l))
+    d2 $ fast 8 $ s "808" # n pat 
+
+do
+    let mylist = [1,2,5,3,1,10,12,4,1,2]
+    let mylist = [1,2,6,3,50,14,31,34,2,6]
+    let l = pure (length mylist)
+    let pat = segment 4 $ (mylist !!) <$> (mod (sig floor) (l))
+    d3 $ fast 8 $ s "kick" # n pat
+
+do
+    let mylist = [1,2,6,3,30,14,21,24,2,6]
+    let l = pure (length mylist)
+    let pat = segment 8 $ (mylist !!) <$> (mod (sig floor) (l))
+    d4 $ fast 4 $ s "jungle" # scale "minor" pat|-20 |+"g" #octave 6 # room 1 # sz 0.7
+
+do
+    let mylist = [1,2,6,3,30,14,21,24,2,6]
+    let l = pure (length mylist)
+    let pat = segment 8 $ (mylist !!) <$> (mod (sig floor) (l))
+    d5 $ fast 8 $ s "jungle" # scale "minor" pat|-20 |+"g" #octave 5 # room 1 # sz 0.7
+hush
+
