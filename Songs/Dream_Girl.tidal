@@ -15,7 +15,7 @@ do
     setN "I" "[d,fs,a]"
     setN "II" "[e,g,b]"
     setN "III" "[fs,a,cs]"
-    setN "IV" "[g,b,d]"
+    setN "IV" "[g,b,d6]"
     setN "V" "[a,cs,e6]" 
     setN "VI" "[b,d6,fs6]"
     setN "VII" "[cs,e6,g6]"
@@ -46,4 +46,5 @@ setcps (164/60/4)
         (10, 14, fadeOut 2 $ note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 3),
         (12, endcycle,note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 4 )
     ] #gain 0.75})
+
 

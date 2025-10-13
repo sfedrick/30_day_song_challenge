@@ -4,9 +4,9 @@ noise(2)
 	.modulate(o0,()=>a.fft[1]*.5) // listening to the 2nd band
 	.out()
 
-a.setSmooth(.8) // audio reactivity smoothness from 0 to 1, uses linear interpolation
-a.setScale(8)    // loudness upper limit (maps to 0)
-a.setCutoff(0.1)   // loudness from which to start listening to (maps to 0)
+a.setSmooth(0.5) // audio reactivity smoothness from 0 to 1, uses linear interpolation
+a.setScale(5)    // loudness upper limit (maps to 0)
+a.setCutoff(1.5)   // loudness from which to start listening to (maps to 0)
 
 a.show() // show what hydra's listening to
 // a.hide()
@@ -19,7 +19,7 @@ src(s0)
   .color(
   () => -1 - a.fft[0]*2 , 
   () => 1 + a.fft[4]*2 )
-  .contrast(() =>  2 -4*a.fft[0])
-  .blend(src(s0).scale(() => 1 + a.fft[1]*0.2), 0.5) 
+  .contrast(() =>  1 -4*a.fft[0])
+  .blend(src(s0).scale(() => 1 + a.fft[0]*0.2), 0.5) 
   .out()
 a.setBins(5)
