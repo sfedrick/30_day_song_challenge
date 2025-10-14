@@ -52,28 +52,56 @@ Dominant (V, vii°): Creates tension. Wants to resolve to tonic.
 
 Mediant & Submediant (iii, vi): Often used for smooth transitions or color.
  -}
+
+
+{-  Mode	Description	Example (for chord [c, e, g])
+"up"	Ascends from lowest to highest note repeatedly	c e g c e g …
+"down"	Descends from highest to lowest repeatedly	g e c g e c …
+"updown"	Goes up then down, repeating	c e g e c e g …
+"downup"	Goes down then up, repeating	g e c e g e c …
+"converge"	Starts at both ends, moves toward the middle	c g e c g e …
+"diverge"	Starts in the middle, moves outward	e c g e c g …
+"random"	Randomly selects notes from the chord	e.g. g c e g e c …
+"randomperm"	Random order for each repetition (new permutation each cycle)	e.g. e g c, then c e g, etc.
+"asplayed"	Plays the notes in the order you wrote them	[c, e, g] → c e g
+you can use any list of simultaneous notes to apregiate -}
+
 setcps 0.5625
 
+d1 $ qtrigger$ slow 4 $ arp "converge"$ 
+    n "0*2 [-5 -3] [~ ~] [-7*2]"
+    #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
+    # room 1 # sz 0.7 # octave 3# gain 1
 
 
-d2 $ qtrigger$ slow 4 $ arp "converge"$ 
+
+
+(do{  
+d1 $ qtrigger$ slow 4 $ arp "converge"$ 
+    n "0*2 [-5 -3] [~ ~] [-7*2]"
+    #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
+    # room 2 # sz 0.7 # octave 3# gain 1;
+d2 $ qtrigger$ slow 4 $ arp "diverge"$ 
   n "0*2 [-5 -3] [~ ~] [-7*2]"
   #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
-  # room 0.3 # sz 0.7 # octave 4 
+  # room 1 # sz 0.7 # octave "<3!4 4!4 5!4 4!4 3!4>"# gain 0.75
+})
+
+d2 silence
 
 d3$ qtrigger  $ arp "converge"$ 
-  n "0*2 [-5 -3] [~ ~] [-7*2]"
-  #note "<g'min'2 a'dim'2 d'min'2 eb'min'2>" # s "superpiano"#legato 1 
-  # room 0.3 # sz 0.7 # octave 4 #gain ( segment 8 $ range 0 1 $ sine)
+    n "0*2 [-5 -3] [~ ~] [-7*2]"
+    #note "<g'min'2 a'dim'2 d'min'2 eb'min'2>" # s "superpiano"#legato 1 
+    # room 1 # sz 0.7 # octave 4 #gain ( segment 8 $ range 0 1 $ sine)
 
 
-d4 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
-    #sound "808" #octave 4 # room 1 # sz 0.7 # gain 1 # legato 1
-
-
-d5 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
-    #sound "kick" #octave 5 # legato 1
-
+(do{
+  d4 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
+      #sound "808" #octave 4 # room 1 # sz 0.7 # gain 1 # legato 1;
+  d5 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
+      #sound "kick" #octave 5 # legato 1
+})
+ 
 
 hush
 
