@@ -13,7 +13,7 @@ do
 -- up, down, updown, downup, converge, diverge, disconverge, pinkyup,
 -- pinkyupdown, thumbup thumbupdown
 
-{- 
+{-  chords
 "major maj M aug plus sharp5 six 6 sixNine 
 six9 sixby9 6by9 major7 maj7 M7 major9 
 maj9 M9 add9 major11 maj11 M11 add11 
@@ -66,33 +66,21 @@ Mediant & Submediant (iii, vi): Often used for smooth transitions or color.
 "asplayed"	Plays the notes in the order you wrote them	[c, e, g] → c e g
 you can use any list of simultaneous notes to apregiate -}
 
-setcps 0.5625
-
-d1 $ qtrigger$ slow 4 $ arp "converge"$ 
-    n "0*2 [-5 -3] [~ ~] [-7*2]"
-    #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
-    # room 1 # sz 0.7 # octave 3# gain 1
-
-
-
+setcps 0.60
 
 (do{  
 d1 $ qtrigger$ slow 4 $ arp "converge"$ 
-    n "0*2 [-5 -3] [~ ~] [-7*2]"
-    #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
-    # room 2 # sz 0.7 # octave 3# gain 1;
-d2 $ qtrigger$ slow 4 $ arp "diverge"$ 
-  n "0*2 [-5 -3] [~ ~] [-7*2]"
-  #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
-  # room 1 # sz 0.7 # octave "<3!4 4!4 5!4 4!4 3!4>"# gain 0.75
+    n "0*2 [-5 -3] [3 0] [-7*2]"
+    #note "a'dim'4 eb'dim'4" # s "trump"#legato 2
+    # room 1 # sz 0.7 # octave 3# gain 1
 })
 
-d2 silence
 
 d3$ qtrigger  $ arp "converge"$ 
     n "0*2 [-5 -3] [~ ~] [-7*2]"
     #note "<g'min'2 a'dim'2 d'min'2 eb'min'2>" # s "superpiano"#legato 1 
-    # room 1 # sz 0.7 # octave 4 #gain ( segment 8 $ range 0 1 $ sine)
+    #voice "3"
+    # room 1 # sz 0.7 # octave 4 #gain ( segment 8 $ range 0.25 1.25 $ sine)
 
 
 (do{
@@ -103,12 +91,14 @@ d3$ qtrigger  $ arp "converge"$
 })
  
 
-hush
-
-
-
-
-
-
+(do{  
+d1 $ qtrigger$ slow 4 $ arp "converge"$ 
+    n "0*2 [-5 -3] [3 0] [-7*2]"
+    #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
+    # room 1 # sz 0.7 # octave 3# gain 1;
+d2 $ qtrigger$ slow 4 $ arp "diverge"$ 
+    n "0*2 [-5 -3] [~ ~] [-7*2]"
+    #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
+    # room 1 # sz 0.7 # octave 4# gain 0.5})
 
 hush

@@ -1,3 +1,34 @@
+hush
+let endcycle = 1000
+resetCycles
+
+(do{
+    -- alphabet
+    d1 $ qtrigger $ seqP [
+        (0, endcycle, n "x!4"# sound "alphabet"
+          # nTake "deep" [3, 4 ,4, 15]# vowel "<i e e i>" # octave 5)
+        ,              
+        (20, endcycle-10,fadeIn 4 $ n "[x*2]!2 [~] [x] "#sound "alphabet"
+          # nTake "deep" [3, 4 ,4, 15] # vowel "<i e e i>" # octave 5)
+                        ]# lpf (2000) # lpq 0.2;
+    -- drums
+    d2 $ qtrigger $ seqP[
+      (5, endcycle, stitch "t(2,8)" (sound "kick:4") (sound "gretsch")),
+      (15, endcycle,n "x*2 [x*4] [~ ~] [x*2]" #s "future"
+      # nCountTo "rachael" 4),
+      (15, endcycle, n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
+      #sound "kick" #octave 5 # legato 1)
+    ];  
+    -- piano 
+    d3 $ qtrigger $ seqP[(10, endcycle,fadeIn 2 $ n "x*2 [x*4] [~ ~] [x*2]" #s "supersaw"
+      #nCountTo "rachael" 4# octave 3) ]
+      #room 0.5 # sz 0.2    
+        })
+
+
+
+{- 
+
 State Values
 State values were recently introducted in Tidal version 1.7.2. For a more in-depth introduction, Alex McLean prepared a Google Slides document you can take a look at. It will explain why such a feature was needed and how it was implemented.
 
@@ -80,3 +111,6 @@ d3 $ n "0 2 3" #s "bass" # ampTake "sVal5" [0.1, 0.8, 0.1, 0.7, 0.01]
 let susan = note "c4 e4 g4 bb4 d5"
 
 let susan = scale "minor" "c4"
+
+
+ -}
