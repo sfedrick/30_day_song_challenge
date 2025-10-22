@@ -68,28 +68,13 @@ you can use any list of simultaneous notes to apregiate -}
 
 setcps 0.60
 
-(do{  
+{- (do{  
 d1 $ qtrigger$ slow 4 $ arp "converge"$ 
     n "0*2 [-5 -3] [3 0] [-7*2]"
     #note "a'dim'4 eb'dim'4" # s "trump"#legato 2
     # room 1 # sz 0.7 # octave 3# gain 1
 })
-
-
-d3$ qtrigger  $ arp "converge"$ 
-    n "0*2 [-5 -3] [~ ~] [-7*2]"
-    #note "<g'min'2 a'dim'2 d'min'2 eb'min'2>" # s "superpiano"#legato 1 
-    #voice "3"
-    # room 1 # sz 0.7 # octave 4 #gain ( segment 8 $ range 0.25 1.25 $ sine)
-
-
-(do{
-  d4 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
-      #sound "808" #octave 4 # room 1 # sz 0.7 # gain 1 # legato 1;
-  d5 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
-      #sound "kick" #octave 5 # legato 1
-})
- 
+ -}
 
 (do{  
 d1 $ qtrigger$ slow 4 $ arp "converge"$ 
@@ -100,5 +85,23 @@ d2 $ qtrigger$ slow 4 $ arp "diverge"$
     n "0*2 [-5 -3] [~ ~] [-7*2]"
     #note "a'dim'4 eb'dim'4" # s "trump"#legato 1 
     # room 1 # sz 0.7 # octave 4# gain 0.5})
+
+
+d3$ qtrigger  $ arp "converge"$ 
+    n "0*2 [-5 -3] [~ ~] [-7*2]"
+    #note "<g'min'2 a'dim'2 d'min'2 eb'min'2>" # s "superpiano"#legato 1 
+    #voice "3"
+    # room 1 # sz 0.7 # octave 4 #gain ( segment 8 $ range 0.25 1 $ sine)
+
+
+(do{
+  d4 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
+      #sound "808" #octave 4 # room 1 # sz 0.7 # gain 1 # legato 1;
+  d5 $ qtrigger $ n (scale "minor" "0*2 [-5 -3] [~ ~] [-7*2]"|+"g") 
+      #sound "kick" #octave 5 # legato 1
+})
+ 
+
+
 
 hush

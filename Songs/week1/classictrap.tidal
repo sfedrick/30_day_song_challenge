@@ -4,6 +4,7 @@
 /home/shaun/.local/share/SuperCollider/downloaded-quarks/SuperDirt/synths
  -}
 resetCycles
+setcps(0.5625)
 
 d1 $ n "x" #s "superhoover"#nCountTo "rachael" 4# octave 5 # room 1 # sz 0.7
 

@@ -25,14 +25,15 @@ VII: Major
  -}
 
  resetCycles 
+ setcps(0.5625)
 
 d1 $ slow "2"$ arp "<converge diverge>" $ n "x!6" # note "a'maj'4 b'min'2 gs'min'4 a5'maj'2" # octave 3 # s "dbass" # room 1 # sz 0.5
 d2 $ slow "2"$ arp "<converge diverge >" $ n "x!6" # note "a'maj'4 b'min'2 gs'min'4 a5'maj'2" # octave 2 # s "superpiano" # room 1 # sz 0.5
 d3 $ n(scale "major" "<[0 2*2 1 5 6!2] [7!2 3 8 4*2 6]>") |+ n "g"# s "supermandolin" # octave 4 #room 1 # sz 0.7
+d4 $ fast"1" $ stitch "t(5,6)" ("bd") ("kick") # room 1 # sz 0.7
+d5 $ slow 2$ n "<[0 2*2 1 5 6!2] [7!2 3 8 4*2 6]> "#sound "bottle"#room 2 # sz 0.7
 
 
-d4 $ fast"2" $ stitch "t(5,6)" ("bd") ("kick") # room 1 # sz 0.7
-d5 $ n "<[0 2*2 1 5 6!2] [7!2 3 8 4*2 6]> "#sound "bottle"#room 1 # sz 0.7
 
 
 

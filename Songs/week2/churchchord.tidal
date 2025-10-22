@@ -1,0 +1,14 @@
+setcps(0.5625)
+
+d1 $ slow 2$ n "x!4" # note "a'maj b'min gs'min a5'maj" # s "superhoover" #room 0.5 # sz 0.7
+
+d2 $ slow 2$ slice 16 "1 2*2 4*2 5 6" $ s "gsmp" #legato 1 #room 1 #sz 0.7 #octave 5
+
+d3 $ s "bd sn [808cy clap] reverbkick"  #room 1 #sz 0.7 
+
+d4 $ s " hh*8" #room 1 #sz 0.7 # gain 1.5
+
+
+
+
+hush

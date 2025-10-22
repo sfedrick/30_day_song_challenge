@@ -1,2 +1,57 @@
-d5 $ slow "2" $ n "x!4" # note "a'maj b'min gs'min a5'maj" # s "superhoover" #room 1 # 0.7
+{- 
+sample 
+https://www.mediafire.com/file/2sd98dhd92951xq/RJ+Pasin+-+Free+Guitar+Samples.zip
+https://www.reddit.com/r/Drumkits/comments/9zfo1b/free_original_electric_guitar_samples_royalty_free/
+
+eminor key:
+E, F#, G, A, B, C, D
+g major 
+G, A, B, C, D, E, and F♯. 
+gminor 
+G, A, B♭, C, D, E♭, and F
+
+a major 
+A, B, C, D, E, F, and G
+a minor
+A, B, C#, D, E, F#, and G#
+
+
+Diatonic chords in a major key use notes from the key
+I: Major 
+ii: Minor 
+iii: Minor 
+IV: Major 
+V: Major 
+vi: Minor 
+vii°: Diminished 
+
+Diatonic chords in a natural minor key
+i: Minor 
+ii°: Diminished 
+III: Major 
+iv: Minor
+v: Minor 
+VI: Major 
+VII: Major 
+
+
+
+ -}
+
+
+setcps (150/60/4)
+
+
+
+d1 $ slow 2$ slice 16 "<[1 2 4*2 3 7 9*2 12 14*2 15] [[10 11] 1 4 3 7 9 12 14 15]>" $ s "gsmp" #legato 1 #room 1 #sz 0.7
+
+d3 $ slow 3$ n "x!4" # note "g'maj a'min fs'min g4'maj'4" # s "superhammond"# voice 2 #room 0.5 # sz 0.7 # gain 0.75  # octave 4 
+d4 $ n "1!2" # s "808"
+d5 $ slow 2 $ s "~ ~ gretsch:1 bd" # room 1 # sz 0.7
+
+d3 silence
+hush
+
+
+
 hush

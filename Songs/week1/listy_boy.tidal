@@ -44,6 +44,7 @@ let l = pure (length mylist);
 let pat1 = segment 1 $ (mylist !!) <$> (mod (sig floor) (l));
 let pat2 = fastcat $ map pure mylist;
 let endcycle = 36;
+setcps(0.5625)
 
 (do{
     --resetCycles;

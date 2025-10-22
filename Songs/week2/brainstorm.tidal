@@ -6,6 +6,7 @@ d2 $ slow 2$ n (scale "melodicMinorDesc" "<[0 2*2 1 5 4 6*2 7 8] >") |+ n"g"
  # s "supersaw" # octave "2"# room 1 #sz 0.3
 
 d4 $ "[x_]!4" # s("kick") # room 1 #sz 0.7
-d5 $ fast 1$ "[[~]!2 clap [~/3 gretch]]!4"# room 1 #sz 0.3
+d5 $ slow 2$ "[[~]!2 clap [~/3 gretch]]!4"# room 1 #sz 0.3
+
 hush
 

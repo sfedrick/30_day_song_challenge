@@ -1,0 +1,15 @@
+setcps (150/60/(4*2))
+
+d1 $ s "gsmp" # grain "<[0.5 0 0.15] [0.5 0.3 0.7]>" "<[0.2 0.1 0.75] [0.7 0.2 0.5]>"# legato 2 # octave 4 #room 2 #sz 0.7 
+d2 $"<[x*2 ~ x] [x ~ x*2] [~ x!2]>" #s "gsmp" # grain "0.5 0 0.15" "0.2 0.1 0.75"# legato 2 # octave 4 #room 2 #sz 0.7 
+
+d6 $ n "~ x [x*2] x" # sound "sn!3 reverbkick" #room 1 # sz 0.25 # gain 1
+d7 $ s "hh*8"#room 1 # sz 0.25 # gain 1
+d3 $ stitch "<[t(3,8)]!2 [f(3,8)] [t(3,8)] [[t f]*4]>" ("coins") ("bd")#room 1 # sz 0.7 # gain 1.25
+
+do 
+    d4 $"<[x!2 ~ x*2] [x_!2] [x_*2]>" # s "jungbass:3" #room 1 # sz 0.7 # gain 1 # octave 4
+    d5 $"<[x!2 ~ x*2] [x_!2] [x_*2]>" # s "jungbass:3" #room 0.5 # sz 0.7 # gain 1 # octave 5
+
+hush
+

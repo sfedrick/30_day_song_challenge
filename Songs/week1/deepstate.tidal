@@ -1,7 +1,7 @@
 hush
 let endcycle = 1000
 resetCycles
-
+setcps(0.5625)
 (do{
     -- alphabet
     d1 $ qtrigger $ seqP [
