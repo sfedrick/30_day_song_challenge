@@ -24,9 +24,8 @@ s.reboot { // server options are only updated on reboot
 		// for example: ~dirt.loadSoundFiles("/Users/myUserName/Dirt/samples/*");
 
 		// s.sync; // optionally: wait for samples to be read
-		//~dirt.start(57120, 0 ! 12);   // start listening on port 57120, create two busses each sending audio to channel 0
-		//record to seperate audio busses
-		~dirt.start(57120, [0, 2, 4, 6, 8, 10,12,14,16,18,20,22,24,26,28,30,32]);
+		~dirt.start(57120, 0 ! 12);   // start listening on port 57120, create two busses each sending audio to channel 0
+		
         // optional, enable feedforward vu meter
         ~dirt.startSendRMS;
 
