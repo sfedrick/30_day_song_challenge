@@ -39,3 +39,5 @@ instance Tidally where tidal = tidalInst
 
  -- Send pattern as osc to SC only
  -- tidal <- startTidal musicTarget config
+ -- Add this so string patterns can be read properly 
+ setN = (streamSet tidal) :: String -> Pattern Note -> IO ()
