@@ -1,0 +1,6 @@
+setcps (125/60/4)
+d1 $ stitch "t(3,8)" (sound "kick:4") (sound "clap:4")
+d2 $ n "20 50(5,8)" # sound "rash"
+d3 $ n" 1(7,8)" # sound "snare"
+
+hush

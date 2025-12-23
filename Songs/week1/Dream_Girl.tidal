@@ -46,5 +46,6 @@ setcps (164/60/4)
         (10, 14, fadeOut 2 $ note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 3),
         (12, endcycle,note chordProgression # s "supersaw"#room 2 #sz 0.7 # octave 4 )
     ] #gain 0.75})
+    hush
 
 
