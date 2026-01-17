@@ -8,14 +8,14 @@ setcps(0.5625)
 
 d1 $ n "x" #s "superhoover"#nCountTo "rachael" 4# octave 5 # room 1 # sz 0.7
 
-d2 $ n "[~ ~] [x!2]" #s "superhammond"# voice 1 # nCountTo "rachael" 4 # octave "<5 6 7>" # room 1 # sz 0.7
+d2 $ n "[~ ~] [x!2]" #s "superhammond"# voice 1 # nCountTo "rachael" 4 # octave "<5 6 7>" # room 1 # size 0.1
 
 d6 $ slow 2$stitch "t(9,16)" (sound "bottle") (sound "hh")#room 2 # sz 0.7 #gain 1
 
 d7 $ qtrigger$ ur 16 "[boom [boom claps]] [kick,claps]"
   [("claps", sound "clap:4*2 clap:2*3"),
-   ("boom", scale "minor" "[0 3*2 -1 7]" # sound "stomp" # shape 0.7 # speed "[1, ~ 2]"#room 2 # sz 0.7),
-   ("kick", scale "minor" "[0 3*2 -1 7]" # sound "kick" # shape 0.7 # speed "[1, ~ 2]"#room 1 # sz 0.7)
+   ("boom", scale "minor" "[0 3*2 -1 7]" # sound "stomp" # shape 0.7 # speed "[1, ~ 2]"#room 2 # sz 0.25),
+   ("kick", scale "minor" "[0 3*2 -1 7]" # sound "kick" # shape 0.7 # speed "[1, ~ 2]"#room 1 # sz 0.25)
   ]
   []
 

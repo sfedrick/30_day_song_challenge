@@ -16,12 +16,12 @@ setcps (140/60/4)
 d1 $ qtrigger $ n "<[e'min a'maj] [fs'min b'min] > " 
     # sound "supergong"# legato 1 # room 1
 
-d2 $ arp "converge" $ n "x!2" # note "<[e'min a'maj] [fs'min b'min] [e'min a'maj] [fs'min b'min] [cs'dim!2 fs'min!2] [a'maj!2 b'min!2]  > "  # octave 3 # s "supercomparator"# voice 2 # room 1
+d2 $ arp "converge" $ n "x!2" # note "<[e'min a'maj] [fs'min b'min] [e'min a'maj] [fs'min b'min] > "  # octave 3 # s "supercomparator"# voice 2 # room 1
 
 
 d4 $ qtrigger $ n ("< [0 1*2 [~ 0] 1*2] [0 1*2 0 1*2]>"+1)# sound "808" # room 1 
 
-d3 $ qtrigger $ n " 3(3,8)" # sound "kick" # room 1 
+d3 $ qtrigger $ n " <[1 0 ~ 1] [0 1 ~ 0]>" # sound "kick" # room 1 
 
 
 
