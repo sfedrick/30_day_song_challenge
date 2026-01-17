@@ -1,0 +1,15 @@
+
+d1 $ n "0 2 4 7" # s "mydevice"
+d2 $ n "0 2 4 7" # sound "arpy"
+hush
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+
+
+{- 
+B minor 
+I (Tonic): B Minor 
+ii (Supertonic): c# dim (E - G - B)
+iii (Mediant): D major (F# - A - C#)
+IV (Subdominant): E Minor (G - B - D)
+V (Dominant): F# Minor(A - C# - E)
+vi (Submediant): G major (B - D - F#)
+vii° (Leading-Tone): A major (C# - E - G) -}
+
+resetCycles
+setcps (140/60/4)
+
+d1 $ qtrigger $ n "<[e'min a'maj] [fs'min b'min] > " 
+    # sound "supergong"# legato 1 # room 1
+
+d2 $ arp "converge" $ n "x!2" # note "<[e'min a'maj] [fs'min b'min] [e'min a'maj] [fs'min b'min] [cs'dim!2 fs'min!2] [a'maj!2 b'min!2]  > "  # octave 3 # s "supercomparator"# voice 2 # room 1
+
+
+d4 $ qtrigger $ n ("< [0 1*2 [~ 0] 1*2] [0 1*2 0 1*2]>"+1)# sound "808" # room 1 
+
+d3 $ qtrigger $ n " 3(3,8)" # sound "kick" # room 1 
+
+
+
+-- "major maj M aug plus sharp5 six 6 sixNine six9 sixby9 6by9 major7 maj7 M7 major9 maj9 M9 add9 major11 maj11 M11 add11 major13 maj13 M13 add13 dom7 dom9 dom11 dom13 sevenFlat5 7f5 sevenSharp5 7s5 sevenFlat9 7f9 nine eleven 11 thirteen 13 minor min m diminished dim minorSharp5 msharp5 mS5 minor6 min6 m6 minorSixNine minor69 min69 minSixNine m69 mSixNine m6by9 minor7flat5 minor7f5 min7flat5 min7f5 m7flat5 m7f5 minor7 min7 m7 minor7sharp5 minor7s5 min7sharp5 min7s5 m7sharp5 m7s5 minor7flat9 minor7f9 min7flat9 min7f9 m7flat9 m7f9 minor7sharp9 minor7s9 min7sharp9 min7s9 m7sharp9 m7s9 diminished7 dim7 minor9 min9 m9 minor11 min11 m11 minor13 min13 m13 minorMajor7 minMaj7 mmaj7 one 1 five 5 sus2 sus4 sevenSus2 7sus2 sevenSus4 7sus4 nineSus4 ninesus4 9sus4 sevenFlat10 7f10 nineSharp5 9sharp5 9s5 minor9sharp5 minor9s5 min9sharp5 min9s5 m9sharp5 m9s5 sevenSharp5flat9 7s5f9 minor7sharp5flat9 m7sharp5flat9 elevenSharp 11s minor11sharp m11sharp m11s"
+chordList
+
+hush
+
+
+
+ fast 2 $n "<[e'min a'maj] [fs'min b'min] [e'min a'maj] [fs'min b'min]> " 
+
+
+
+
+fast 4$ ur  2 "<q1  claps>"
+  [("q1", n "<[e'min a'maj] [fs'min b'min]>  " # sound "supergong"# legato 2 # room 3),
+   ("claps", sound "[clap:4*2] [kick:4*3]"
+   )
+  ]
+  [
+  ]
+
+
+    
+
+(do{
+    --resetCycles;
+    -- Drums 1
+    d1 $ qtrigger $ seqP [
+        (0, 2, n "<[e'min a'maj] [fs'min b'min] > " # sound "supergong"# legato 2 # room 3),  
+        (2, 4, n "x1 x2 x3 x4" # s "super808")
+        ];
+    })
+
+
+d1 $ ur  4 "c1  claps"
+  [("c1", n "<[e'min a'maj] [fs'min b'min]>  " # sound "supergong" # legato 2#room 3),
+   ("claps", sound "<[clap:4!4] [kick:4!4]>"
+   )
+  ]
+  [
+  ]
+
+  hush
+
+
+resetCycles
+
+d1 $ qtrigger  $ seqPLoop [(0, 2.5, n "<[e'min a'maj] [fs'min b'min]>  " # sound "supergong"# legato 2 # room 3),
+               (3, 5, sound "clap:4(3,8)" # speed 2)
+              ]

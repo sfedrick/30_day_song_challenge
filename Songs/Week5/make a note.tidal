@@ -1,4 +1,9 @@
 setcps (1)
-d1 $ fast 1 $ n "x" # sound "kick"  # gain 1
+d1 $ fast "261.63 523.26 1046.52 261.63" $ n "x!4" # sound "kick"  # gain 1 # room 2 #lpf 500
+
+d1 $ fast "1" $ n "x!4" # sound "kick"  # gain 1 # room 2 #lpf 500
+
+d3 $ qtrigger $ n " 3(3,8)" # sound "kick" # room 1 
+d1 $ n "20 50" # sound "rash" # room 2
 
 hush
